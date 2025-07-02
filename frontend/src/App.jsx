@@ -5,7 +5,7 @@ import Day4 from './components/Day4'
 import Day6 from './components/Day6'
 import Day7 from './components/Day7'
 import Day8 from './components/Day8'
-import Day9 from './components/Day9'
+
 import { useState } from 'react'
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
           {currentPage == '6' ? <Day6 /> : null}
           {currentPage == '7' ? <Day7 /> : null}
           {currentPage == '8' ? <Day8 /> : null}
-          {currentPage == '9' ? <Day9 /> : null}
+          {currentPage == '9' ? <div>Nội dung Buổi 9</div> : null}
           {currentPage == '10' ? <div>Nội dung Buổi 10</div> : null}
         </main>
       </div>

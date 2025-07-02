@@ -95,7 +95,7 @@ function Products({ theme = 'light' }) {
         if (!searchTerm.trim()) return products
         return products.filter(product =>
             product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            product.price.toString().includes(searchTerm)
+            product.price.toString().toLowerCase().includes(searchTerm)
         )
     }, [products, searchTerm])
 

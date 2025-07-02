@@ -1,13 +1,13 @@
 import { useState } from 'react'
 
-function ProductForm({ AddProduct }) {
+function ProductForm({ onAddProduct }) {
     const [name, setName] = useState('')
     const [price, setPrice] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (name.trim() && price.trim()) {
-            AddProduct({
+            onAddProduct({
                 id: Date.now(),
                 name: name.trim(),
                 price: price.trim()
@@ -19,41 +19,42 @@ function ProductForm({ AddProduct }) {
 
     return (
         <div >
-            <form 
-                onSubmit={handleSubmit} 
+            <form
+                onSubmit={handleSubmit}
                 style={{
-                    display:'flex', 
-                    flexDirection:'row', 
-                    alignItems:'center',
-                    justifyContent:'center'}}>
-                <label for="product-name" style={{marginRight:'10px'}}>Tên sản phẩm:</label>
+                    display: 'flex',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+                <label htmlFor="product-name" style={{ marginRight: '10px' }}>Tên sản phẩm:</label>
                 <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Nhập tên sản phẩm"
-                    id = "product-name"
+                    id="product-name"
                 />
-                <label 
-                    for="product-price"
+                <label
+                    htmlFor="product-price"
                     style={{
-                        marginRight:'10px',
-                        marginLeft:'10px'
-                }}>Giá:</label>
+                        marginRight: '10px',
+                        marginLeft: '10px'
+                    }}>Giá:</label>
                 <input
                     type="text"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     placeholder="Nhập giá"
-                    id = "product-price"
-                /><br/>
-                <button 
+                    id="product-price"
+                /><br />
+                <button
                     type="submit"
                     style={{
-                        marginLeft:'10px',
-                        fontSize:14,
-                        fontWeight:'bold',
-                        padding:'7px'
+                        marginLeft: '10px',
+                        fontSize: 14,
+                        fontWeight: 'bold',
+                        padding: '7px'
                     }}>Thêm</button>
             </form>
         </div>
