@@ -34,5 +34,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  // Product API Routes
+  'GET /api/products': 'ProductController.list',
+  'POST /api/products': 'ProductController.create',
+  'PUT /api/products/:id': 'ProductController.update',
+  'DELETE /api/products/:id': 'ProductController.destroy',
 
 };

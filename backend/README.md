@@ -1,3 +1,50 @@
+# Sails.js Product API - Đơn giản
+
+## Cách chạy:
+```bash
+cd backend
+sails lift
+```
+
+## API Endpoints:
+
+### 1. Lấy danh sách sản phẩm
+**GET** `http://localhost:1337/api/products`
+
+### 2. Tạo sản phẩm mới
+**POST** `http://localhost:1337/api/products`
+```json
+{
+  "name": "Laptop Dell",
+  "price": "15.000.000đ"
+}
+```
+
+### 3. Cập nhật sản phẩm
+**PUT** `http://localhost:1337/api/products/1`
+```json
+{
+  "name": "Laptop Dell Updated",
+  "price": "18.000.000đ"
+}
+```
+
+### 4. Xóa sản phẩm
+**DELETE** `http://localhost:1337/api/products/1`
+
+## Test với Postman:
+
+1. Tạo request mới
+2. Chọn method (GET, POST, PUT, DELETE)
+3. Nhập URL
+4. Với POST/PUT: Body → raw → JSON
+5. Send request
+
+## Cấu trúc đơn giản:
+- **Model**: `api/models/Product.js` - định nghĩa cấu trúc dữ liệu
+- **Controller**: `api/controllers/ProductController.js` - xử lý logic
+- **Routes**: `config/routes.js` - định nghĩa đường dẫn
+
 # backend
 
 a [Sails v1](https://sailsjs.com) application
